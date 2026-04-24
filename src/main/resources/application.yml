@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: PsyCare
+
+server:
+  port: 8080
+
+app:
+  username: ${APP_USERNAME}
+  password: ${APP_PASSWORD}
+
+jwt:
+  private:
+    key: ${JWT_PRIVATE_KEY}
+  user:
+    generator: ${JWT_USER_GENERATOR}
+
+agenda:
+  start:
+    hour: ${AGENDA_START_HOUR}
+  end:
+    hour: ${AGENDA_END_HOUR}
+  session:
+    duration: ${AGENDA_SESSION_DURATION}

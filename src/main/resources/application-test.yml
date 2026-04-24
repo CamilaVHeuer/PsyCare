@@ -1,0 +1,53 @@
+# =================================
+# TEST CONFIGURATION (H2 In-Memory)
+# =================================
+
+spring:
+  application:
+    name: PsyCare
+
+  datasource:
+    url: jdbc:h2:mem:psycare;DB_CLOSE_DELAY=-1;MODE=MySQL
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    org.springframework.test: INFO
+
+app:
+  username: test_user
+  password: test_password123
+
+agenda:
+  start:
+    hour: 13
+  end:
+    hour: 22
+  session:
+    duration: 40
+
+jwt:
+  private:
+    key: test-secret-key-12345678901234567890
+  user:
+    generator: test-user-generator
