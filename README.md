@@ -97,27 +97,27 @@ src/
 
 ### Entities
 
-| Entity           | Description                                                                                                                                                |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Patient`        | Main entity. Can be a minor (requires a `Tutor`). Has a `PatientStatus` (ACTIVE / DISCHARGED) and may have an associated `Insurance` and `ClinicalRecord`. |
-| `Tutor`          | Legal guardian or parent of a minor patient. Linked with a `TutorRelation` (MOTHER / FATHER / LEGAL_GUARDIAN).                                             |
-| `Insurance`      | Medical insurance provider. Has name and CUIT.                                                                                                             |
-| `Appointment`    | Scheduled visit. Can store either a registered `Patient` or ad-hoc contact data. Has `AppointmentStatus`, `AppointmentType`, price, and payment tracking.  |
-| `Payment`        | Payment record associated with an `Appointment`. Has `PaymentStatus` (PENDING / PAID / CANCELLED) and amount.                                              |
-| `ClinicalRecord` | One per patient. Stores reason for consult, diagnosis, observations, and medication. Contains a list of `Session`s.                                        |
-| `Session`        | Individual therapy session note. Linked to a `ClinicalRecord`. Stores date and evolution notes.                                                            |
-| `User`           | Single application user (the psychologist). Used for authentication.                                                                                       |
+| Entity           | Description                                                                                                                                                                                 |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Patient`        | Main entity. Can be a minor (requires a `Tutor`). Has a `PatientStatus` (ACTIVE / DISCHARGED) and may have an associated `Insurance` and `ClinicalRecord`.                                  |
+| `Tutor`          | Legal guardian or parent of a minor patient. Linked with a `TutorRelation` (MOTHER / FATHER / LEGAL_GUARDIAN).                                                                              |
+| `Insurance`      | Medical insurance provider. Has name and CUIT.                                                                                                                                              |
+| `Appointment`    | Scheduled visit. Can store either a registered `Patient` or ad-hoc contact data. Has `AppointmentStatus` (PENDING / PARTIALLY_PAID / PAID), `AppointmentType`, price, and payment tracking. |
+| `Payment`        | Payment record associated with an `Appointment`. Has `PaymentStatus` (CREATED / CANCELED) and amount.                                                                                       |
+| `ClinicalRecord` | One per patient. Stores reason for consult, diagnosis, observations, and medication. Contains a list of `Session`s.                                                                         |
+| `Session`        | Individual therapy session note. Linked to a `ClinicalRecord`. Stores date and evolution notes.                                                                                             |
+| `User`           | Single application user (the psychologist). Used for authentication.                                                                                                                        |
 
 ### Enums
 
 | Enum                       | Values                                         |
 | -------------------------- | ---------------------------------------------- |
 | `PatientStatus`            | `ACTIVE`, `DISCHARGED`                         |
-| `AppointmentStatus`        | `SCHEDULED`, `CANCELLED`, `ATTENDED`           |
-| `AppointmentType`          | `GENERAL`, `FIRST_CONSULTATION`, _(others)_    |
-| `AppointmentPaymentStatus` | Tracks overall payment state of an appointment |
-| `PaymentStatus`            | `PENDING`, `PAID`, `CANCELLED`                 |
-| `TutorRelation`            | `MOTHER`, `FATHER`, `LEGAL_GUARDIAN`           |
+| `AppointmentStatus`        | `SCHEDULED`, `CANCELLED`, `ATTENDED`,`NO_SHOW` |
+| `AppointmentType`          | `GENERAL`, `DISABILITY`                        |
+| `AppointmentPaymentStatus` | `PEDNING`,`PARTIALLY_PAID`,`PAID`              |
+| `PaymentStatus`            | `CREATED`, `CANCELED`, `CANCELLED`             |
+| `TutorRelation`            | `MOTHER`, `FATHER` `LEGAL_GUARDIAN`            |
 
 ---
 
@@ -153,13 +153,14 @@ All endpoints (except login and Swagger docs) require a valid JWT in the `Author
 
 ### 📆 Appointments — `/api/v1/appointments`
 
-| Method  | Path             | Description                                                       |
-| ------- | ---------------- | ----------------------------------------------------------------- |
-| `GET`   | `/{id}`          | Get appointment by ID                                             |
-| `POST`  | `/`              | Create a new appointment (with registered patient or ad-hoc data) |
-| `PATCH` | `/{id}`          | Partially update an appointment                                   |
-| `PUT`   | `/{id}/cancel`   | Cancel an appointment                                             |
-| `PUT`   | `/{id}/attended` | Mark an appointment as attended                                   |
+| Method  | Path                    | Description                                                       |
+| ------- | ----------------------- | ----------------------------------------------------------------- |
+| `GET`   | `/{id}`                 | Get appointment by ID                                             |
+| `POST`  | `/`                     | Create a new appointment (with registered patient or ad-hoc data) |
+| `PATCH` | `/{id}`                 | Partially update an appointment                                   |
+| `PUT`   | `/{id}/cancel`          | Cancel an appointment                                             |
+| `PUT`   | `/{id}/attended`        | Mark an appointment as attended                                   |
+| `PUT`   | `/{id}/mark-as-no-show` | Mark an appointment as no-show                                    |
 
 ### 💊 Insurances — `/api/v1/insurances`
 
@@ -312,8 +313,6 @@ DB_USER_NAME=root
 DB_PASSWORD=yourpassword
 ```
 
-> ⚠️ Never commit the `.env` file to version control. Add it to `.gitignore`.
-
 ---
 
 ## Running the Application
@@ -401,4 +400,6 @@ All endpoints are documented with:
 
 ## Author
 
-Developed by **CamiCompany** — `com.camicompany.PsyCare`
+Developed by **Camila Villalba Heuer**
+
+Contact: **cbvillalbaheuer@gmail.com**
