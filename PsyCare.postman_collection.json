@@ -1,0 +1,1514 @@
+{
+	"info": {
+		"_postman_id": "3d1a725c-2d85-468a-856f-37ee723212bf",
+		"name": "PsyCare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50750078",
+		"_collection_link": "https://cbvillalbaheuer-6547728.postman.co/workspace/cbvillalbaheuer's-Workspace~4e764144-8344-466e-887a-aadaab37f3e6/collection/50750078-3d1a725c-2d85-468a-856f-37ee723212bf?action=share&source=collection_link&creator=50750078"
+	},
+	"item": [
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "Patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adult Patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Juan\",\n  \"lastname\": \"Suarez\",\n  \"nationalId\": \"12348765\",\n  \"birthDate\": \"1999-08-25\",\n  \"phone\": \"12345678\",\n  \"tutorId\": null,\n  \"tutor\": null,\n  \"insuranceId\": 1,\n  \"insuranceNumber\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adult Patients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Manuel\",\n  \"lastname\": null,\n  \"nationalId\": \"12345678\",\n  \"birthDate\": null,\n  \"phone\": null,\n  \"tutorId\": null,\n  \"tutor\": null,\n  \"insuranceId\": null,\n  \"insuranceNumber\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Minor Patients with TutorID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Pedro\",\n  \"lastname\": \"Suarez\",\n  \"nationalId\": \"87654321\",\n  \"birthDate\": \"2019-08-25\",\n  \"phone\": null,\n  \"tutorId\": 1,\n  \"tutor\": null,\n  \"insuranceId\": 1,\n  \"insuranceNumber\": \"4321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Minor Patients with TutorID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": null,\n  \"lastname\": null,\n  \"nationalId\": null,\n  \"birthDate\": \"2019-05-10\",\n  \"phone\": null,\n  \"tutorId\": null,\n  \"tutor\": null,\n  \"insuranceId\": null,\n  \"insuranceNumber\": \"null\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Minor Patients with Tutor Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"Lucía\",\n  \"lastname\": \"Gómez\",\n  \"nationalId\": \"11223344\",\n  \"birthDate\": \"2020-05-15\",\n  \"phone\": null,\n  \"tutorId\": null,\n  \"tutor\": {\n    \"firstname\": \"María\",\n    \"lastname\": \"Gómez\",\n    \"phone\": \"11998877\",\n    \"cuil\": \"27-22334455-6\",\n    \"relation\": \"MOTHER\"\n  },\n  \"insuranceId\": 2,\n  \"insuranceNumber\": \"1122\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Minor Patients with Tutor Data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": null,\n  \"lastname\": null,\n  \"nationalId\": null,\n  \"birthDate\": null,\n  \"phone\": null,\n  \"tutorId\": null,\n  \"tutor\": {\n    \"firstname\": \"Mariela\",\n    \"lastname\": \"Gómez\",\n    \"phone\": \"11998877\",\n    \"cuil\": \"27-11112222-6\",\n    \"relation\": \"MOTHER\"\n  },\n  \"insuranceId\": null,\n  \"insuranceNumber\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsYWJlYm8iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzc3MjE2NjUyLCJleHAiOjE3NzczMDMwNTIsIm5iZiI6MTc3NzIxNjY1Mn0.XC8CobEu9Sc6gkmWSdi1LuPyY1lBBjCM7sKTwIWDw4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reactive patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsYWJlYm8iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzc3MjE2NjUyLCJleHAiOjE3NzczMDMwNTIsIm5iZiI6MTc3NzIxNjY1Mn0.XC8CobEu9Sc6gkmWSdi1LuPyY1lBBjCM7sKTwIWDw4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/3/reactive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"3",
+								"reactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Discharge patient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsYWJlYm8iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzc3MjE2NjUyLCJleHAiOjE3NzczMDMwNTIsIm5iZiI6MTc3NzIxNjY1Mn0.XC8CobEu9Sc6gkmWSdi1LuPyY1lBBjCM7sKTwIWDw4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/3/discharge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"3",
+								"discharge"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutor",
+			"item": [
+				{
+					"name": "Change Relation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsYWJlYm8iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzc3MjE2NjUyLCJleHAiOjE3NzczMDMwNTIsIm5iZiI6MTc3NzIxNjY1Mn0.XC8CobEu9Sc6gkmWSdi1LuPyY1lBBjCM7sKTwIWDw4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"relation\": \"LEGAL_GUARDIAN\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tutors/4/relation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tutors",
+								"4",
+								"relation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"María\",\n    \"lastname\": \"Gómez\",\n    \"phone\": \"22998877\",\n    \"cuil\": \"27-22334455-6\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tutor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tutor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tutor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJsYWJlYm8iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzc3MjE2NjUyLCJleHAiOjE3NzczMDMwNTIsIm5iZiI6MTc3NzIxNjY1Mn0.XC8CobEu9Sc6gkmWSdi1LuPyY1lBBjCM7sKTwIWDw4Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"Julia\",\n    \"lastname\": \"Benitez\",\n    \"phone\": \"11998877\",\n    \"cuil\": \"27-22334455-6\",\n    \"relation\": \"MOTHER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/tutors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"tutors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clinical Record",
+			"item": [
+				{
+					"name": "Clinical Record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clinical-records/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clinical-records",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinical Record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reasonConsult\": \"Anxiety\",\n  \"diagnosis\": \"Chronic Anxiety\",\n  \"obs\": \"Does not sleep well\",\n  \"medication\": \"Anxiolytics\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/patients/1/clinical-record",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"patients",
+								"1",
+								"clinical-record"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clinical Record",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reasonConsult\": null,\n  \"diagnosis\": null,\n  \"obs\": null,\n  \"medication\": \"Anxiolytics and melatonin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clinical-records/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clinical-records",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"appDateTime\": \"2026-12-31T14:20:00\",\n  \"price\": 30000.00,\n  \"firstname\": \"Laura\",\n  \"lastname\": \"Sanchez\",\n  \"phone\": \"11122233\",\n  \"patientId\": \"null\",\n  \"type\": \"GENERAL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"appDateTime\": null,\n  \"price\": 40000.00,\n  \"firstname\": null,\n  \"lastname\": null,\n  \"phone\": null,\n  \"patientId\": null,\n  \"type\": \"DISABILITY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as attended appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1/mark-as-attended",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1",
+								"mark-as-attended"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mark as no show appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/1/mark-as-no-show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"1",
+								"mark-as-no-show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Agenda",
+			"item": [
+				{
+					"name": "Available slots",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/agenda/available-slots?date=2026-12-31",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"agenda",
+								"available-slots"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2026-12-31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sessionDate\": \"2024-05-06\",\n  \"evolutionNotes\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Session",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sessionDate\": \"2024-05-05\",\n  \"evolutionNotes\": \"The patient shows progress in the session.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/clinical-records/1/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"clinical-records",
+								"1",
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments?startDate=2026-04-01&endDate=2026-4-30",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "2026-04-01"
+								},
+								{
+									"key": "endDate",
+									"value": "2026-4-30"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payments by appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/2/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"2",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payDate\": \"2026-04-01\",\n  \"amount\": 15000,\n  \"payMethod\": \"Bank transfer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/payments/1/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"payments",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"payDate\": \"2026-04-01\",\n  \"amount\": 10000,\n  \"payMethod\": \"Cash\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/appointments/2/payments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"appointments",
+								"2",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Insurance",
+			"item": [
+				{
+					"name": "Insurances",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insurances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insurances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insurance by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insurances/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insurances",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insurance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": null,\n  \"cuit\": \"30-11223344-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insurances/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insurances",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insurance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"OSDE\",\n  \"cuit\": \"30-11223344-0\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insurances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insurances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insurance by name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/insurances/name/OSDE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"insurances",
+								"name",
+								"OSDE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYW1pYWRtaW4iLCJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjoiQ1JFQVRFLERFTEVURSxSRUFELFJPTEVfQURNSU4sVVBEQVRFIiwiaWF0IjoxNzcwNjU5MDMyLCJleHAiOjE3NzA2NjA4MzIsIm5iZiI6MTc3MDY1OTAzMn0.JvYWdyZGaLjpj8iLCWDMkYcUl5v-qGmnGLhKYndGk2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"admin1234\",\n  \"newPassword\": \"admin4321\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/auth/update-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

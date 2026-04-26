@@ -121,7 +121,42 @@ src/
 
 ---
 
-## API Endpoints
+
+## Functional Flows
+
+### 1. Minor Patient Creation & Tutor Assignment
+
+- When creating a minor patient:
+  - **Option 1:** Pass an existing `tutorId` → the patient is linked to that tutor.
+  - **Option 2:** Provide the full data for a new tutor in the `tutor` field → the tutor is created in the database and automatically linked to the patient.
+  - **Restriction:** You cannot send both (`tutorId` and `tutor`) at the same time.
+  - **Alternative:** There is an endpoint to create a tutor separately (`POST /api/v1/tutors`) and then associate it to a patient using its `tutorId`.
+
+### 2. Insurance Management & Association
+
+- To associate an insurance to a patient:
+  - The insurance must first be created using `POST /api/v1/insurances`.
+  - Then, when creating or updating a patient, you can associate it using the `insuranceId`.
+  - **Difference:** If the tutor does not exist, you can create it "inline" when creating the patient. But the insurance must already exist in the database (for simplicity).
+
+### 3. Payment & Appointment Payment Status
+
+- Every time a payment is registered (`POST /appointments/{id}/payments`):
+  - The `appointmentPaymentStatus` field of the appointment is updated automatically:
+    - If the sum of payments equals the appointment price → `PAID`
+    - If the sum is greater than 0 but less than the price → `PARTIALLY_PAID`
+    - If there are no payments → `PENDING`
+- If a payment is cancelled (`PUT /payments/{id}/cancel`):
+  - The system recalculates the appointment status based on the remaining payments.
+  - The status can go back to `PENDING` or `PARTIALLY_PAID` as appropriate.
+
+### 4. Appointment Creation: Existing vs. Ad-hoc Patient
+
+- When creating an appointment:
+  - **Option 1:** Pass an existing `patientId` → the appointment is linked to that registered patient.
+  - **Option 2:** Provide the minimum required data (`firstname`, `lastname`, `phone`) → the appointment is created with those ad-hoc details, not linked to a registered patient.
+  - This allows scheduling for new patients who are not yet formally registered in the system.
+---
 
 All endpoints (except login and Swagger docs) require a valid JWT in the `Authorization: Bearer <token>` header.
 
@@ -374,6 +409,14 @@ Tests use the `test` profile, which automatically configures an **H2 in-memory d
 
 ---
 
+## Postman Collection
+
+You can test all endpoints easily using the provided Postman collection:
+
+- [`PsyCare.postman_collection.json`](./PsyCare.postman_collection.json)
+
+## Import this file into Postman to get all requests (patients, appointments, tutors, payments, etc.) pre-configured, including authentication flows.
+
 ## API Documentation (Swagger)
 
 When the application is running, the interactive Swagger UI is available at:
@@ -395,6 +438,19 @@ All endpoints are documented with:
 - All possible response codes and their schemas
 - Parameter descriptions and examples
 - JWT `Bearer` token requirement indicator
+
+---
+
+## Continuous Integration (CI)
+
+This project uses **GitHub Actions** for Continuous Integration.
+All pushes and pull requests to `main` automatically trigger:
+
+- Build and dependency check
+- Compilation with Maven
+- Execution of all tests (JUnit, Mockito, integration and security tests with H2)
+
+You can see the workflow file in `.github/workflows/ci.yml` and the status badge at the top of this README (if enabled).
 
 ---
 
