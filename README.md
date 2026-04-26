@@ -121,7 +121,6 @@ src/
 
 ---
 
-
 ## Functional Flows
 
 ### 1. Minor Patient Creation & Tutor Assignment
@@ -156,6 +155,7 @@ src/
   - **Option 1:** Pass an existing `patientId` → the appointment is linked to that registered patient.
   - **Option 2:** Provide the minimum required data (`firstname`, `lastname`, `phone`) → the appointment is created with those ad-hoc details, not linked to a registered patient.
   - This allows scheduling for new patients who are not yet formally registered in the system.
+
 ---
 
 All endpoints (except login and Swagger docs) require a valid JWT in the `Authorization: Bearer <token>` header.
@@ -188,14 +188,14 @@ All endpoints (except login and Swagger docs) require a valid JWT in the `Author
 
 ### 📆 Appointments — `/api/v1/appointments`
 
-| Method  | Path                    | Description                                                       |
-| ------- | ----------------------- | ----------------------------------------------------------------- |
-| `GET`   | `/{id}`                 | Get appointment by ID                                             |
-| `POST`  | `/`                     | Create a new appointment (with registered patient or ad-hoc data) |
-| `PATCH` | `/{id}`                 | Partially update an appointment                                   |
-| `PUT`   | `/{id}/cancel`          | Cancel an appointment                                             |
-| `PUT`   | `/{id}/attended`        | Mark an appointment as attended                                   |
-| `PUT`   | `/{id}/mark-as-no-show` | Mark an appointment as no-show                                    |
+| Method  | Path                     | Description                                                       |
+| ------- | ------------------------ | ----------------------------------------------------------------- |
+| `GET`   | `/{id}`                  | Get appointment by ID                                             |
+| `POST`  | `/`                      | Create a new appointment (with registered patient or ad-hoc data) |
+| `PATCH` | `/{id}`                  | Partially update an appointment                                   |
+| `PUT`   | `/{id}/cancel`           | Cancel an appointment                                             |
+| `PUT`   | `/{id}/mark-as-attended` | Mark an appointment as attended                                   |
+| `PUT`   | `/{id}/mark-as-no-show`  | Mark an appointment as no-show                                    |
 
 ### 💊 Insurances — `/api/v1/insurances`
 
